@@ -4,7 +4,9 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "sass": "sass styles/sass/styles.sass:public/css/styles.css",
+    "sass-watch": "sass --watch styles/sass/styles.sass:public/css/styles.css",
+    "start": "npm run sass && nodemon server.js"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +17,7 @@
     "express-session": "^1.18.0",
     "mysql2": "^3.9.7",
     "passport-jwt": "^4.0.1",
+    "sass": "^1.71.1",
     "pug": "^3.0.2"
   },
   "devDependencies": {
