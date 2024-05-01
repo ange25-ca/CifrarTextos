@@ -1,0 +1,48 @@
+link(rel='stylesheet', href='/css/styles.css')
+
+block content
+  div.login-container
+  section.forms-section
+    .forms
+      .form-wrapper.is-active
+        button.switcher.switcher-login(type="button")
+          | Login
+          span.underline
+        form.form.form-login
+          fieldset
+            legend Please, enter your email and password for login.
+            .input-block
+              label(for="login-email") E-mail
+              input#login-email(type="email", required)
+            .input-block
+              label(for="login-password") Password
+              input#login-password(type="password", required)
+          button.btn-login(type="submit") Login
+      .form-wrapper
+        button.switcher.switcher-signup(type="button")
+          | Sign Up
+          span.underline
+        form.form.form-signup
+          fieldset
+            legend Please, enter your email, password and password confirmation for sign up.
+            .input-block
+              label(for="signup-email") E-mail
+              input#signup-email(type="email", required)
+            .input-block
+              label(for="signup-password") Password
+              input#signup-password(type="password", required)
+            .input-block
+              label(for="signup-password-confirm") Confirm password
+              input#signup-password-confirm(type="password", required)
+            button.btn-signup(type="submit") Continue
+script.
+  const switchers = document.querySelectorAll('.switcher');
+  switchers.forEach(item => {
+    item.addEventListener('click', function() {
+      switchers.forEach(item => item.parentElement.classList.remove('is-active'));
+      this.parentElement.classList.add('is-active');
+    });
+  });
+
+
+

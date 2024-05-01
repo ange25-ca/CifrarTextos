@@ -16,7 +16,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.use('/', router);
 
 //Puerto en el cual se escucha el servidor
-const port = 3000;
+const port = 3030;
 app.listen(port, () => {
     console.log(`Servidor iniciado en http://localhost:${port}`);
 })
