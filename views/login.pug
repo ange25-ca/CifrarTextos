@@ -8,9 +8,10 @@ block content
         button.switcher.switcher-login(type="button")
           | Login
           span.underline
-        form.form.form-login
+        //LOGIN
+        .form.form.form-login 
           fieldset
-            legend Please, enter your email and password for login.
+            legend Bienvenido, porfavor ingresa los siguientes datos
             .input-block
               label(for="login-email") E-mail
               input#login-email(type="email", required)
@@ -22,7 +23,8 @@ block content
         button.switcher.switcher-signup(type="button")
           | Sign Up
           span.underline
-        form.form.form-signup
+        //ACCOUNT CREATION
+        .form.form.form-signup
           fieldset
             legend Please, enter your email, password and password confirmation for sign up.
             .input-block
@@ -35,6 +37,7 @@ block content
               label(for="signup-password-confirm") Confirm password
               input#signup-password-confirm(type="password", required)
             button.btn-signup(type="submit") Continue
+//Permite el cambio de pestaña
 script.
   const switchers = document.querySelectorAll('.switcher');
   switchers.forEach(item => {

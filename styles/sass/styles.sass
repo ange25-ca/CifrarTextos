@@ -1,10 +1,21 @@
-*, *::before, *::after
+*,
+*::before,
+*::after
   box-sizing: border-box
 
 body
   margin: 0
+  padding: 0
   font-family: Roboto, -apple-system, 'Helvetica Neue', 'Segoe UI', Arial, sans-serif
   background: #3b4465
+
+ul
+  list-style: none
+
+a 
+  text-decoration: none
+  
+.container
 
 .forms-section
   display: flex
@@ -23,10 +34,10 @@ body
   margin-top: 40px
 
 .form-wrapper
-  animation: hideLayer .3s ease-out forwards
+  animation: hideLayer .5s ease-out forwards
 
 .form-wrapper.is-active
-  animation: showLayer .3s ease-in forwards
+  animation: showLayer .5s ease-in forwards
 
 @keyframes showLayer
   100%
@@ -55,7 +66,7 @@ body
   transition: all .3s ease-out
 
 .form-wrapper.is-active .switcher-login
-  color: #fff
+  color: #ffffff8a
 
 .form-wrapper.is-active .switcher-signup
   color: #fff
@@ -105,7 +116,7 @@ body
 
 @keyframes showLogin
   100%
-    background-color: #fff
+    background-color: #ffffff
     transform: translate(35%, -20px)
 
 @keyframes hideLogin
@@ -150,6 +161,8 @@ body
 
 .form legend
   position: absolute
+  top: 0 
+  left: 0
   overflow: hidden
   width: 1px
   height: 1px
@@ -158,20 +171,21 @@ body
 .input-block
   margin-bottom: 20px
 
-.input-block label
+.input-block label //LEYENDAS 
   font-size: 14px
-  color: #a1b4b4
+  font-weight: bold
+  color: #0b0b0b
 
 .input-block input
   display: block
   width: 100%
-  margin-top: 8px
+  margin-top: 10px
   padding-right: 15px
   padding-left: 15px
   font-size: 16px
   line-height: 40px
-  color: #3b4465
-  background: #eef9fe
+  color: #0f0f0f
+  background: #eef9fe98
   border: 1px solid #cddbef
   border-radius: 2px
 
@@ -193,11 +207,11 @@ body
 
 .btn-login
   color: #fbfdff
-  background: #a7e245
+  background: #3B4465
   transform: translateX(-30%)
 
 .btn-signup
   color: #fbfdff
-  background: #a7e245
-  box-shadow: inset 0 0 0 2px #a7e245
+  background: #3B4465
+  box-shadow: inset 0 0 0 2px #3B4465
   transform: translateX(30%)

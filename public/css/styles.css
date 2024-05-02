@@ -1,4 +1,6 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -28,11 +30,11 @@ body {
 }
 
 .form-wrapper {
-  animation: hideLayer 0.3s ease-out forwards;
+  animation: hideLayer 0.5s ease-out forwards;
 }
 
 .form-wrapper.is-active {
-  animation: showLayer 0.3s ease-in forwards;
+  animation: showLayer 0.5s ease-in forwards;
 }
 
 @keyframes showLayer {
@@ -56,7 +58,7 @@ body {
   font-family: inherit;
   font-size: 16px;
   letter-spacing: 0.5px;
-  color: #141414;
+  color: #d4cdcd;
   background-color: transparent;
   border: none;
   outline: none;
@@ -65,7 +67,7 @@ body {
 }
 
 .form-wrapper.is-active .switcher-login {
-  color: #fff;
+  color: rgba(255, 255, 255, 0.5411764706);
 }
 
 .form-wrapper.is-active .switcher-signup {
@@ -125,7 +127,7 @@ body {
 
 @keyframes showLogin {
   100% {
-    background-color: #fff;
+    background-color: #ffffff;
     transform: translate(35%, -20px);
   }
 }
@@ -180,6 +182,8 @@ body {
 
 .form legend {
   position: absolute;
+  top: 0;
+  left: 0;
   overflow: hidden;
   width: 1px;
   height: 1px;
@@ -192,19 +196,20 @@ body {
 
 .input-block label {
   font-size: 14px;
-  color: #a1b4b4;
+  font-weight: bold;
+  color: #0b0b0b;
 }
 
 .input-block input {
   display: block;
   width: 100%;
-  margin-top: 8px;
+  margin-top: 10px;
   padding-right: 15px;
   padding-left: 15px;
   font-size: 16px;
   line-height: 40px;
-  color: #3b4465;
-  background: #eef9fe;
+  color: #0f0f0f;
+  background: rgba(238, 249, 254, 0.5960784314);
   border: 1px solid #cddbef;
   border-radius: 2px;
 }
@@ -229,14 +234,14 @@ body {
 
 .btn-login {
   color: #fbfdff;
-  background: #a7e245;
+  background: #3B4465;
   transform: translateX(-30%);
 }
 
 .btn-signup {
   color: #fbfdff;
-  background: #a7e245;
-  box-shadow: inset 0 0 0 2px #a7e245;
+  background: #3B4465;
+  box-shadow: inset 0 0 0 2px #3B4465;
   transform: translateX(30%);
 }
 
