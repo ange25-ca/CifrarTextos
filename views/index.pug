@@ -1,20 +1,21 @@
 //extends layout 
-doctype html
-html(lang="es")
-  head
-    meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    link(rel='stylesheet', href='/css/styles.css')
-    title Document
-  body 
-    header.header 
-    seccion.container_navbar
-      nav.nav_container 
-        a(href='/') CONVERTEXT
-        div.navbar__nav
-          ul.nav__list 
-            li 
-              a(href='/') Inicio
-            li 
-              a(href='/') Usuario
-     
+
+link(rel='stylesheet', href='/css/styles.css')
+link(href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css", rel="stylesheet")
+link(rel="preconnect", href="https://fonts.googleapis.com")
+link(rel="preconnect", href="https://fonts.gstatic.com" crossorigin)
+link(href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Major+Mono+Display&display=swap", rel="stylesheet")
+
+
+block content
+  div.inicio.container
+    navbar.container_navbar
+      i(class="ri-text-block") 
+      h1 #{title}
+      ul.prueba
+        li
+          i(class="ri-search-eye-line")
+          a(href="") USUARIO
+        li 
+          a(href="") HOME 
+         
