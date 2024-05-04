@@ -9,13 +9,35 @@ link(href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Major+Mono
 
 block content
   div.inicio.container
-    navbar.container_navbar
-      i(class="ri-text-block") 
-      h1 #{title}
-      ul.prueba
-        li
-          i(class="ri-search-eye-line")
-          a(href="") USUARIO
-        li 
-          a(href="") HOME 
-         
+    nav
+      div.navbar
+        div.container.nav-container
+          input.checkbox(type="checkbox" name="" id="")
+          div.icon-lines
+            span.line.line1
+            span.line.line2
+            span.line.line3
+          div.logo
+            i(class="ri-text-block")
+            h1 #{title}
+          div.menu-items
+            li
+              a(href="#") Home
+            li
+              a(href="#") about
+            li
+              a(href="#") blogs
+            li
+              a(href="#") portfolio
+            li
+              a(href="#") contact
+    div.contenido_container
+      div.campos_container
+        div.campo1_container
+          label(for="trans-text") Ingresa el texto que deseas codificar
+          textarea(name="", cols="30", rows="10")
+        div.campo2_container
+          label(for="trans-text") Tu texto esta codificado en: 
+          textarea(name="", cols="30", rows="10")
+
+
