@@ -138,20 +138,44 @@ body
   display: none
 
 //DISEÑO DEL CONTENIDO
-.campos_container
+.contenido_container
   display: flex
-  margin-top: 2rem
-  width: 100%
-  align-items: center
-  color: white
-  border-color: blue
-  flex-direction: column
+  padding: 0px 10rem 0px
+  text-align: center
 
-  .campo1_container
-    display: block
+  .campos_container
+    display: flex
+    margin: 2rem auto
+    width: 100%
+    align-items: center
+    color: white
+    border-color: blue
+    text-align: center
 
-  .campo2_container
-    display: block
+    .campo1_container
+      display: block
+      flex-direction: column
+      margin-right: 5rem
+      
+      .label
+        display: block 
+        margin-bottom: 5px 
+      
+      .textarea
+        width: 400px
+        height: 400px
+
+    .campo2_container
+      display: block
+      flex-direction: column
+      
+      .label
+        display: block 
+        margin-bottom: 5px 
+      
+      .textarea
+        width: 400px
+        height: 400px
 
 //DISEÑO DEL LOGIN
 .forms-section
