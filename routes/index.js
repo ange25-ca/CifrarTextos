@@ -1,11 +1,9 @@
 const express = require('express');
 const router = express.Router();
 
+// Ruta para mostrar el formulario de registro
 router.get('/', (req, res) => {
-  res.render('index', { 
-    title: req.user != null ? `Bienvenido ${req.user.nombre}` : 'CODETEXT', 
-    user: req.user != null ? `${req.user.nombre}` : ''
-  });
+  res.render('index', { title: 'CODETEXT' });
 });
 
 module.exports = router;

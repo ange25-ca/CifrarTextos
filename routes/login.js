@@ -15,10 +15,9 @@ router.post('/', passport.authenticate('local', {
 }), async (req, res) => {
   // Si se autentica correctamente, crea un token JWT
   const token = authMiddleware.generateToken(req.user.id);
-
   res.cookie('token', token, { httpOnly: true, secure: false });
-
-  res.redirect('index');
+  console.log('Redireccionando a /index');
+  res.redirect('/index');
 });
 
 // Ruta para mostrar el formulario de registro
