@@ -392,6 +392,7 @@ body {
 
 .form [type=submit] {
   opacity: 0;
+  cursor: pointer;
   display: block;
   min-width: 120px;
   margin: 30px auto 10px;

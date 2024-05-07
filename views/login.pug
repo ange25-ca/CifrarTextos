@@ -9,43 +9,17 @@ block content
           | Login
           span.underline
         //LOGIN
-        .form.form.form-login 
+        .form.form.form-login(action='/login' method='POST') 
           fieldset
             legend Bienvenido, porfavor ingresa los siguientes datos
             .input-block
-              label(for="login-email") E-mail
-              input#login-email(type="email", required)
+              label(for="username") Usuario
+              input(type="text", name="username", id='username' required)
             .input-block
-              label(for="login-password") Password
-              input#login-password(type="password", required)
-          button.btn-login(type="submit") Login
-      .form-wrapper
-        button.switcher.switcher-signup(type="button")
-          | Sign Up
-          span.underline
-        //ACCOUNT CREATION
-        .form.form.form-signup
-          fieldset
-            legend Please, enter your email, password and password confirmation for sign up.
-            .input-block
-              label(for="signup-email") E-mail
-              input#signup-email(type="email", required)
-            .input-block
-              label(for="signup-password") Password
-              input#signup-password(type="password", required)
-            .input-block
-              label(for="signup-password-confirm") Confirm password
-              input#signup-password-confirm(type="password", required)
-            button.btn-signup(type="submit") Continue
-//Permite el cambio de pestaña
-script.
-  const switchers = document.querySelectorAll('.switcher');
-  switchers.forEach(item => {
-    item.addEventListener('click', function() {
-      switchers.forEach(item => item.parentElement.classList.remove('is-active'));
-      this.parentElement.classList.add('is-active');
-    });
-  });
+              label(for="password") Password
+              input#login-password(type="password", name="password", required)
+          button.btn-login(type="submit") Inicar sesión
+
 
 
 
