@@ -14,13 +14,13 @@ block content
             legend Please, enter your email, password and password confirmation for sign up.
             .input-block
                 label(for="username") Usuario
-                input#login-name(type="text", required)
+                input#login-name(type="text", name="nombre", required)
                 label(for="email") E-mail
-                input#signup-email(type="email", required)
+                input#signup-email(type="email", name="email", required)
             .input-block
                 label(for="password") Password
-                input#signup-password(type="password", required)
+                input#signup-password(type="password", name="password", required)
             .input-block
                 label(for="confirmPassword") Confirm password
-                input#signup-password-confirm(type="password", required)
+                input#signup-password-confirm(type="password", name="confirmPassword", required)
             button.btn-signup(type="submit") Registrarse
