@@ -33,6 +33,13 @@ block content
               a(href="#") contact
     div.contenido_container
       div.campos_container
+        select#Opciones
+          option(value="codificar") Incripta en:
+          option(value="Hexa") Hexadecimal
+          option(value="Cesar") Código césar
+          option(value="Sustitu") Sustitución
+          option(value="Base64") Base 64
+          option(value="Binario") Binario
         div.campo1_container
           label.label(for="trans-text") Ingresa el texto que deseas codificar
           textarea.textarea(name="", cols="30", rows="10")
