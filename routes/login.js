@@ -17,7 +17,7 @@ router.post('/', passport.authenticate('local', {
   const token = authMiddleware.generateToken(req.user.id);
   res.cookie('token', token, { httpOnly: true, secure: false });
   console.log('Redireccionando a /index');
-  res.redirect('/index');
+  res.redirect('/');
 });
 
 // Ruta para mostrar el formulario de registro

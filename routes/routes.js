@@ -9,7 +9,7 @@ const registro = require('./registro');
 const registrarUsuario = require('./registrar-usuario');
 
 //Configura las rutas
-router.use('/index', index);
+router.use('/', index);
 router.use('/login', login);
 router.use('/registro', registro);
 router.use('/registrar-usuario', registrarUsuario);

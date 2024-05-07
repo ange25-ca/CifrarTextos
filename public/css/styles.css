@@ -274,18 +274,6 @@ body {
   transition: transform 0.2s ease-out;
 }
 
-.switcher-login .underline::before {
-  transform: translateX(101%);
-}
-
-.switcher-signup .underline::before {
-  transform: translateX(-101%);
-}
-
-.form-wrapper.is-active .underline::before {
-  transform: translateX(0);
-}
-
 .form {
   overflow: hidden;
   min-width: 260px;
