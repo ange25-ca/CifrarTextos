@@ -7,6 +7,7 @@ body
   margin: 0
   padding: 0
   background-color: #3B4465
+  color: white
 
 .title
   font-size: 2rem
@@ -15,7 +16,7 @@ body
 .container
   max-width: 1440px
   width:100%
-  height: 15px //No lo tenía
+  height: 15px 
 
 .navbar //Principal
   width: 100%
@@ -51,10 +52,9 @@ body
   .checkbox
     position: absolute
     display: block
-    height: 5px
+    height: 100px // Ajusta la altura para hacer clic en todo el área
     width: 90px //*
-    top: 20px
-    left: 20px
+    top: 1px
     z-index: 5
     opacity: 0
     cursor: pointer
@@ -89,18 +89,18 @@ body
       transform-origin: 0% 100%
       transition: transform 0.4s ease-in-out
 
+
   .menu-items //Menú desplegable
-    box-shadow: inset 0 0 2000px rgba(0, 0, 0, 0.966)
-    height: 500px
+    box-shadow: inset 0 0 2000px rgba(0, 0, 0, 0.55)
+    height: 50px
     width: 500px
-    transform: translate(-150%)
+    transform: translate(-160%)
     display: flex
-    flex-direction: column
-    margin-left: -40px
-    padding-left: 10px 
+    margin-left: 40px
+    padding-left: 40px 
     transition: transform 0.5s ease-in-out
     text-align: center
-    padding-top: 2rem
+    border-radius: 10px
 
     li
       margin-bottom: 1.2rem

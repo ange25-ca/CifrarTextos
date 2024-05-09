@@ -10,12 +10,17 @@ const usuarios = require('./database/tables/usuarios'); // Archivo contenedor de
 const dotenv = require('dotenv');
 const cookieParser = require('cookie-parser');
 const authMiddleWare = require('./middlewares/authMiddleware');
+const codiControllers = require('./controllers/codiControllers');
+const cifrarCesar = require('./controllers/cifrarCesar');
+
 
 //Configura Cookie Parser
 app.use(cookieParser());
 
 //Configura DotEnv
 dotenv.config();
+
+
 
 // Configurar middleware para manejar sesiones
 app.use(session({
@@ -111,7 +116,6 @@ app.get('/logout', async (req, res) => {
 const router = require('./routes/routes');
 //Manejo de todas las solicitudes para las ruta principal o subrutas
 app.use('/', router);
-
 
 //Puerto en el cual se escucha el servidor
 const port = 3030;
