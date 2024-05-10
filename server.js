@@ -13,7 +13,6 @@ const authMiddleWare = require('./middlewares/authMiddleware');
 const codiControllers = require('./controllers/codiControllers');
 const cifrarCesar = require('./controllers/cifrarCesar');
 
-
 //Configura Cookie Parser
 app.use(cookieParser());
 
@@ -73,6 +72,7 @@ app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).send('Algo salió mal');
 });
+
 
 app.use(express.urlencoded({ extended: true }));
 

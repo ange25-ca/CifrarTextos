@@ -26,23 +26,23 @@ block content
               a(href="#") about
             li
               a(href="#") contact
-  form(action="./Cifrar" method="POST")
-    div.contenido_container
-      div.campos_container
-        select(id='opcion' name='opcion')
-          option(value="codificar") Cifra en:
-          option(value="Hexa") Hexadecimal
-          option(value="Cesar") Código césar
-          option(value="Base64") Base 64
-          option(value="Binario") Binario
-        input(type="number" placeholder="Desplazamiento (para César)" id="saltosCesar" name="SaltosCesar")
-        div.campo1_container
-          label.label(for="trans-text") Ingresa el texto que deseas codificar
-          textarea.textarea(id="textoOriginal" name="textoOriginal", cols="30", rows="10")
-        button(type="submit" id="cifrarBoton" name="cifrarBoton") CODIFICAR 
-        div.campo2_container
-          label.label(for="trans-text") Tu texto esta codificado en: 
-          textarea(id="textoCifradoResultado" name="textoCifradoResultado", cols="30", rows="10" ) 
+    form(action="/Cifrar" method="post")
+      div.contenido_container
+        div.campos_container
+          select(id='opcion' name='opcion')
+            option(value="codificar") Cifra en:
+            option(value="Hexa") Hexadecimal
+            option(value="Cesar") Código césar
+            option(value="Base64") Base 64
+            option(value="Binario") Binario
+          input(type="number" placeholder="Desplazamiento (para César)" id="saltosCesar" name="saltosCesar")
+          div.campo1_container
+            label.label(for="trans-text") Ingresa el texto que deseas codificar
+            textarea.textarea(id="textoOriginal" name="textoOriginal", cols="30", rows="10")
+          button(type="submit" id="cifrarBoton" name="cifrarBoton") CODIFICAR 
+          div.campo2_container
+            label.label(for="trans-text") Tu texto esta codificado en: 
+            textarea(name="textoCifradoResultado", rows="5", cols="50")= textoCifradoResultado
 
 
 //- script. 

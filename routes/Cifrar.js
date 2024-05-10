@@ -1,73 +1,38 @@
+
+//10/05/2024
 const express = require('express');
 const router = express.Router();
-const cifrarCesar = require('../controllers/cifrarCesar');
+const cifrarCesar = require('../controllers/cifrarCesar'); // Corregido aquí
 
-// router.post('/', async (req, res) => {
-//   const { opcion, saltosCesar, textoOriginal } = req.body;
+// Manejador de ruta para manejar la solicitud POST del formulario
+router.post('/Cifrar', (req, res) => {
+    try {
+        // Validar la entrada
+        const opcion = req.body.opcion;
+        const saltosCesar = parseInt(req.body.SaltosCesar);
+        const textoOriginal = req.body.textoOriginal;
 
-//   if (opcion === "Cesar") {
-//     // Asegúrate de que saltosCesar no sea nulo, indefinido y sea convertible a un número entero
-//     const parsedSaltosCesar = parseInt(saltosCesar);
-//     // Llamar a la función cifrarCesar con los valores proporcionados y almacenar el resultado
-//     const textoCifradoResultado = cifrarCesar(textoOriginal, parsedSaltosCesar);
-//   } else if (opcion === "Hexa") {
-//     // Lógica para cifrado en hexadecimal
-//   } else if (opcion === "Base64") {
-//     // Lógica para cifrado en Base64
-//   } else if (opcion === "Binario") {
-//     // Lógica para cifrado en binario
-//   } else {
-//     // Lógica para otra opción o manejar errores
-//   }
-// });
+        if (!opcion || isNaN(saltosCesar) || !textoOriginal) {
+            throw new Error('Datos de entrada inválidos');
+        }
 
-//       //res.render(textoCifradoResultado);
-// });
-// router.post('/', async (req, res) => {
-//   const { opcion, saltosCesar, textoOriginal } = req.body;
-//   let result = ''; // Declaración de la variable result
+        let textoCifrado;
+        
+        if (opcion === 'Cesar') {
+            // Cifrar utilizando el cifrado César
+            textoCifrado = cifrarCesar(textoOriginal, saltosCesar);
+        } else {
+            // Implementar otras opciones de cifrado aquí si es necesario
+            throw new Error('Opción de cifrado no válida');
+        }
 
-//   if (opcion === "Cesar") {
-//        // Asegúrate de que saltosCesar no sea nulo, indefinido y que sea convertible a un número entero
-//        const parsedSaltosCesar = parseInt(saltosCesar);
-//        if (!isNaN(parsedSaltosCesar)) {
-//          // Llamada a la función cifrarCesar con los valores proporcionados
-//          result = cifrarCesar(textoOriginal, parsedSaltosCesar);}
-//   } else if (opcion === "Hexa") {
-//     // Lógica para cifrado en hexadecimal
-//   } else if (opcion === "Base64") {
-//     // Lógica para cifrado en Base64
-//   } else if (opcion === "Binario") {
-//     // Lógica para cifrado en binario
-//   } else {
-//     // Lógica para otra opción o manejar errores
-//   }
-
-//   // Renderizado de la vista y pasando el texto cifrado como datos
-//   res.render('index', { textoCifradoResultado: result });
-// });
-// router.post('/', async (req, res) => {
-//   const { opcion, saltosCesar, textoOriginal } = req.body;
-//   let result = ''; // Declaración de la variable result
-
-//   if (opcion === "Cesar") {
-//        // Asegúrate de que saltosCesar no sea nulo, indefinido y que sea convertible a un número entero
-//        const parsedSaltosCesar = parseInt(saltosCesar);
-//        if (!isNaN(parsedSaltosCesar)) {
-//          // Llamada a la función cifrarCesar con los valores proporcionados
-//          result = cifrarCesar(textoOriginal, parsedSaltosCesar);}
-//   } else if (opcion === "Hexa") {
-//     // Lógica para cifrado en hexadecimal
-//   } else if (opcion === "Base64") {
-//     // Lógica para cifrado en Base64
-//   } else if (opcion === "Binario") {
-//     // Lógica para cifrado en binario
-//   } else {
-//     // Lógica para otra opción o manejar errores
-//   }
-
-//   // Renderizado de la vista y pasando el texto cifrado como datos
-//   res.render('./index', { textoCifradoResultado: result});
-// });
+        // Renderizar una vista con el texto cifrado
+        res.render('index', { textoCifradoResultado: textoCifrado }); // Aquí se cambia a textoCifradoResultado
+    } catch (error) {
+        // Manejar errores
+        console.error(error);
+        res.status(400).send('Error');
+    }
+});
 
 module.exports = router;
