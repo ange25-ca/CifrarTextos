@@ -12,10 +12,10 @@ router.get('/', (req, res) => {
 router.post('/cifrar', (req, res) => {
   // Obtener el texto ingresado desde el formulario
   const textoOriginal = req.body.textoOriginal;
-  const saltosCesar = req.body.saltosCesar;
+  const SaltosCesar = req.body.saltosCesar;
   
   // Realizar el cifrado utilizando la función cifrarCesar
-  const textoCifrado = cifrarCesar(textoOriginal, saltosCesar);
+  const textoCifrado = cifrarCesar(textoOriginal, SaltosCesar);
 
   // Renderiza la vista index con el texto cifrado
   res.render('index', { title: 'CODETEXT', textoCifradoResultado: textoCifrado });

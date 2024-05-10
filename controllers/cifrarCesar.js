@@ -1,28 +1,55 @@
 const express = require('express');
 //const router = express.Router();
-function cifrarCesar(text, key) {
-    console.log("Texto Original: ", text);
-    const codes = [];
-    const alphabetLength = 26; // Longitud del alfabeto en inglés
-    for (let i = 0; i < text.length; i++) {
-        // Se obtiene el código ASCII del carácter antes del cifrado
-        let code = text.charCodeAt(i);
-        console.log("Código ASCII del carácter antes del cifrado:", code);
-        
-        // Se aplica la clave de cifrado
-        if (code >= 97 && code <= 122) { // Letras minúsculas
-            code = ((code - 97 + key) % alphabetLength) + 97;
+// function cifrarCesar(text, key) {
+//     console.log("Texto Original: ", text);
+//     console.log("Saltos Cesar:", key)
+//     const alphabet = "abcdefghijklmnopqrstuvwxyz";
+//     let textoCifrado = "";
+//     for (let i = 0; i < text.length; i++) 
+//       {
+//         let char = text[i];
+//         if (char >= 'a' && char <= 'z') {
+//             let index = alphabet.indexOf(char);
+//             // Aplicamos la clave de cifrado al índice
+//             let encryptedIndex = (index + key) % alphabet.length;
+//             // Convertimos el índice cifrado de nuevo a un carácter
+//             textoCifrado += alphabet[encryptedIndex];
+//         } else {
+//             // Mantenemos los caracteres que no son letras sin cifrar
+//             textoCifrado += char;
+//         }
+//     }
+//     console.log("Texto cifrado:", textoCifrado);
+//     return textoCifrado;
+// }
+// module.exports = cifrarCesar;
+
+
+function cifrarCesar(texto, clave) {
+    const codigos = [];
+    const longitudAlfabeto = 26; // Longitud del alfabeto inglés
+    for (let i = 0; i < texto.length; i++) {
+      let codigoCifrado = texto.charCodeAt(i) + (clave % longitudAlfabeto);
+      if (texto[i] >= 'a' && texto[i] <= 'z') {
+        if (codigoCifrado > 122) {
+          codigoCifrado -= 26;
+        } else if (codigoCifrado < 97) {
+          codigoCifrado += 26;
         }
-        // Se imprime el código ASCII del carácter después del cifrado
-        console.log("Código ASCII del carácter después del cifrado:", code);
-        codes.push(code);
+      } else if (texto[i] >= 'A' && texto[i] <= 'Z') {
+        if (codigoCifrado > 90) {
+          codigoCifrado -= 26;
+        } else if (codigoCifrado < 65) {
+          codigoCifrado += 26;
+        }
+      }
+      codigos.push(codigoCifrado);
     }
-    // Se convierten los códigos ASCII cifrados a caracteres y se retorna el texto cifrado
-    let textoCifradoResultado = String.fromCharCode(...codes);
-    console.log("Texto cifrado:", textoCifradoResultado); 
-    return textoCifradoResultado;
-}
-
+    return String.fromCharCode(...codigos);
+ }
+ 
+ // Ejemplo de uso:
+ //console.log(cifrarCesar("abc", 10)); // Debería devolver "klm"
+ 
+ 
 module.exports = cifrarCesar;
-
-

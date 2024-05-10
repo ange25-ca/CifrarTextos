@@ -9,7 +9,7 @@ router.post('/Cifrar', (req, res) => {
     try {
         // Validar la entrada
         const opcion = req.body.opcion;
-        const saltosCesar = parseInt(req.body.saltosCesar);
+        const SaltosCesar = parseInt(req.body.saltosCesar);
         const textoOriginal = req.body.textoOriginal;
 
         if (!opcion || isNaN(saltosCesar) || !textoOriginal) {
@@ -20,7 +20,7 @@ router.post('/Cifrar', (req, res) => {
 
         if (opcion === 'Cesar') {
             // Cifrar utilizando el cifrado César
-            textoCifrado = cifrarCesar(textoOriginal, saltosCesar);
+            textoCifrado = cifrarCesar(textoOriginal, SaltosCesar);
         } else {
             // Implementar otras opciones de cifrado aquí si es necesario
             throw new Error('Opción de cifrado no válida');
