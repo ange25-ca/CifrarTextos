@@ -29,69 +29,18 @@ block content
     form(action="/Cifrar" method="post")
       div.contenido_container
         div.campos_container
-          select(id='opcion' name='opcion')
-            option(value="codificar") Cifra en:
-            option(value="Hexa") Hexadecimal
-            option(value="Cesar") Código césar
-            option(value="Base64") Base 64
-            option(value="Binario") Binario
-          input(type="number" placeholder="Desplazamiento (para César)" id="saltosCesar" name="saltosCesar")
+          div.seleccion_container
+            select.opcionStyle(id='opcion' name='opcion')
+              option(value="codificar") Cifra en:
+              option(value="Hexa") Hexadecimal
+              option(value="Cesar") Código césar
+              option(value="Base64") Base 64
+              option(value="Binario") Binario
+            input.saltoStyle(type="number" placeholder="Desplazamiento (para César)" id="saltosCesar" name="saltosCesar")
           div.campo1_container
             label.label(for="trans-text") Ingresa el texto que deseas codificar
-            textarea.textarea(id="textoOriginal" name="textoOriginal", cols="30", rows="10")
-          button(type="submit" id="cifrarBoton" name="cifrarBoton") CODIFICAR 
+            textarea.textarea(id="textoOriginal" name="textoOriginal", cols="30", rows="10")= textoOriginal
+          button.codiButton(type="submit" id="cifrarBoton" name="cifrarBoton") CODIFICAR 
           div.campo2_container
-            label.label(for="trans-text") Tu texto esta codificado en: 
-            textarea(name="textoCifradoResultado", rows="5", cols="50")= textoCifradoResultado
-
-
-//- script. 
-//-   function cifrarCesar() {
-//-     const cifrarBoton = document.getElementById('cifrarBoton');
-//-     const textoOriginal = document.getElementById('textoOriginal');
-//-     const clave = document.getElementById('clave');
-//-     const textoCifrado = document.getElementById('textoCifradoResultado');
-    
-//-     // Función para cifrar el texto utilizando el cifrado César
-//-     function cifrarCesar(text, key) {
-//-       const codes = [];
-//-       for (let i = 0; i < text.length; i++) {
-//-         // Se obtiene el código ASCII del carácter y se le suma la clave de cifrado
-//-         codes.push((text.charCodeAt(i) + key));
-//-       }
-//-       // Se convierten los códigos ASCII cifrados a caracteres y se retorna el texto cifrado
-//-       return String.fromCharCode(...codes);
-//-     }
-    
-//-     // Evento de clic en el botón para cifrar el texto
-//-     cifrarBoton.addEventListener('click', () => {
-//-       console.log('Botón clickeado');
-
-//-       // Obtener el texto ingresado y la clave de cifrado
-//-       const texto = textoOriginal.value;
-//-       const claveCifrado = parseInt(clave.value);
-
-//-       // Llamar a la función cifrarCesar para cifrar el texto
-//-       const textoCifradoResultado = cifrarCesar(texto, claveCifrado);
-
-//-       // Asignar el texto cifrado al textarea correspondiente
-//-       textoCifrado.value = textoCifradoResultado;
-//-     });
-//-   }
-
-//- script.
-//-   function seleccionarOpcion() {
-//-     var opcionSeleccionada = document.getElementById("Opciones").value;
-//-     if (opcionSeleccionada === "Cesar") {
-//-       cifrarCesar();
-//-     } else if (opcionSeleccionada === "Hexa") {
-//-       // Lógica para cifrado en hexadecimal
-//-     } else if (opcionSeleccionada === "Base64") {
-//-       // Lógica para cifrado en Base64
-//-     } else if (opcionSeleccionada === "Binario") {
-//-       // Lógica para cifrado en binario
-//-     } else {
-//-       // Lógica para otra opción o manejar errores
-//-     }
-//-   }
-
+            label.label(for="trans-text") Tu texto codificado: 
+            textarea.textarea(name="textoCifradoResultado", rows="10", cols="30")= textoCifradoResultado

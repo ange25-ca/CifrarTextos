@@ -140,17 +140,46 @@ body
 //DISEÑO DEL CONTENIDO
 .contenido_container
   display: flex
-  flex-direction: column //AGRE
+  flex-direction: column
   align-items: center
-  padding: 0px 20px //AGRE
-  //padding: 0px 10rem 0px
+  padding: 0px 20px 
   text-align: center
+  margin-top: 2rem
 
   .campos_container
     display: flex
     flex-direction: column 
     align-items: center
     margin-top: 20px
+    height: 25rem
+
+    .seleccion_container
+      line-height: 15rem
+      height: 20px
+      margin-bottom: 2rem
+
+      .opcionStyle
+        padding: 14px
+        font-size: 15px
+        border-radius: 5px
+        margin-bottom: 2rem
+        width: 14rem
+        height: 3rem
+        background-color: #757ea190
+        color: white
+
+      .saltoStyle
+        border: none
+        padding: 15px
+        font-size: 15px
+        border-radius: 5px
+        height: 3rem
+        width: 14rem
+        background-color: #757ea190
+        color: white
+
+        &::placeholder
+          color: #fffcfc
 
     .campo1_container
       width: 100% 
@@ -163,13 +192,16 @@ body
         margin-bottom: 5px 
       
       .textarea
-        width: 400px
-        height: 400px
+        width: 100%
+        height: 100%
+        background-color: #49537690
+        color: white
 
     .campo2_container
       width: 100% 
       max-width: 600px 
-      margin-bottom: 20px 
+      margin-bottom: 20px
+      margin-left: 0.5rem 
       text-align: center 
       
       .label
@@ -177,83 +209,35 @@ body
         margin-bottom: 5px 
       
       .textarea
-        width: 400px
-        height: 400px
+        width: 100%
+        height: 100%
+        background-color: #49537690
+        color: white
+
+    .codiButton
+      font-size: 15px
+      border-radius: 5px
+      margin-bottom: 1rem
+      width: 14rem
+      height: 3rem
+      border: none
+      background-color: #757ea190
+      color: white
+      font-weight: bold
+
+    .codiButton:hover
+      border: 1px solid
+      box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.5),0 0 20px rgba(255, 255, 255, 0.2)
+      outline-color: rgba(255, 255, 255, 0)
+      outline-offset: 15px
+      text-shadow: 1px 1px 2px #427388
 
 //DISEÑO DEL LOGIN
 .forms-section
-  display: flex
-  flex-direction: column
-  justify-content: center
-  align-items: center
-
-.section-title
-  font-size: 32px
-  letter-spacing: 1px
-  color: #fff
-
-.forms
-  display: flex
-  align-items: flex-start
-  margin-top: 40px
-
-.form-wrapper
-  animation: hideLayer .5s ease-out forwards
-
-.form-wrapper.is-active
-  animation: showLayer .5s ease-in forwards
-
-@keyframes showLayer
-  100%
-    z-index: 1
-
-@keyframes hideLayer
-  49.999%
-    z-index: 1
-
-.switcher
-  position: relative
-  cursor: pointer
-  display: block
-  margin-right: auto
-  margin-left: auto
-  padding: 0
-  text-transform: uppercase
-  font-family: inherit
-  font-size: 16px
-  letter-spacing: .5px
-  color: #d4cdcd
-  background-color: transparent
-  border: none
-  outline: none
-  transform: translateX(0)
-  transition: all .3s ease-out
-
-.form-wrapper.is-active .switcher-login
-  color: #ffffff8a
-
-.form-wrapper.is-active .switcher-signup
-  color: #fff
-
-.underline
-  position: absolute
-  bottom: -5px
-  left: 0
-  overflow: hidden
-  pointer-events: none
-  width: 100%
-  height: 2px
-
-.underline::before
-  content: ''
-  position: absolute
-  top: 0
-  left: inherit
-  display: block
-  width: inherit
-  height: inherit
-  background-color: currentColor
-  transition: transform .2s ease-out
+   display: flex
+   flex-direction: column
+   justify-content: center
+   align-items: center
 
 .form
   overflow: hidden
@@ -263,110 +247,124 @@ body
   border-radius: 5px
   transform-origin: top
 
-.form-login
-  animation: hideLogin .3s ease-out forwards
 
-.form-wrapper.is-active .form-login
-  animation: showLogin .3s ease-in forwards
+// .section-title
+//   font-size: 32px
+//   letter-spacing: 1px
+//   color: #fff
 
-@keyframes showLogin
-  100%
-    background-color: #ffffff
-    transform: translate(35%, -20px)
+// .forms
+//   display: flex
+//   align-items: flex-start
+//   margin-top: 40px
 
-@keyframes hideLogin
-  100%
-    background: #d7e7f1
-    transform: translate(40%, 10px)
+// @keyframes showLayer
+//   100%
+//     z-index: 1
 
-.form-signup
-  animation: hideSignup .3s ease-out forwards
+// @keyframes hideLayer
+//   49.999%
+//     z-index: 1
 
-.form-wrapper.is-active .form-signup
-  animation: showSignup .3s ease-in forwards
+// .form-wrapper.is-active .switcher-login
+//   color: #ffffff8a
 
-@keyframes showSignup
-  100%
-    background-color: #fff
-    transform: translate(-35%, -20px) scaleY(1)
+// .form-wrapper.is-active .switcher-signup
+//   color: #fff
 
-@keyframes hideSignup
-  100%
-    background: #d7e7f1
-    transform: translate(-40%, 10px) scaleY(.8)
+// .form
+//   overflow: hidden
+//   min-width: 260px
+//   margin-top: 50px
+//   padding: 30px 25px
+//   border-radius: 5px
+//   transform-origin: top
 
-.form fieldset
-  position: relative
-  opacity: 0
-  margin: 0
-  padding: 0
-  border: 0
-  transition: all .3s ease-out
+// @keyframes showLogin
+//   100%
+//     background-color: #ffffff
+//     transform: translate(35%, -20px)
 
-.form-login fieldset
-  transform: translateX(-50%)
+// @keyframes hideLogin
+//   100%
+//     background: #d7e7f1
+//     transform: translate(40%, 10px)
 
-.form-signup fieldset
-  transform: translateX(50%)
+// .form-signup
+//   animation: hideSignup .3s ease-out forwards
 
-.form-wrapper.is-active fieldset
-  opacity: 1
-  transform: translateX(0)
-  transition: opacity .4s ease-in, transform .35s ease-in
+// .form-wrapper.is-active .form-signup
+//   animation: showSignup .3s ease-in forwards
 
-.form legend
-  position: absolute
-  top: 0 
-  left: 0
-  overflow: hidden
-  width: 1px
-  height: 1px
-  clip: rect(0 0 0 0)
+// @keyframes showSignup
+//   100%
+//     background-color: #fff
+//     transform: translate(-35%, -20px) scaleY(1)
 
-.input-block
-  margin-bottom: 20px
+// @keyframes hideSignup
+//   100%
+//     background: #d7e7f1
+//     transform: translate(-40%, 10px) scaleY(.8)
 
-.input-block label 
-  font-size: 14px
-  font-weight: bold
-  color: #0b0b0b
 
-.input-block input
-  display: block
-  width: 100%
-  margin-top: 10px //10px
-  padding-right: 15px
-  padding-left: 15px
-  font-size: 16px
-  line-height: 40px //40PX
-  color: #0f0f0f
-  background: #eef9fe98
-  border: 1px solid #cddbef
-  border-radius: 2px
+// .form-wrapper.is-active fieldset
+//   opacity: 1
+//   transform: translateX(0)
+//   transition: opacity .4s ease-in, transform .35s ease-in
 
-.form [type='submit']
-  opacity: 0
-  cursor: pointer
-  display: block
-  min-width: 120px
-  margin: 30px auto 10px
-  font-size: 18px
-  line-height: 40px
-  border-radius: 25px
-  border: none
-  transition: all .3s ease-out
+// .form legend
+//   position: absolute
+//   top: 0 
+//   left: 0
+//   overflow: hidden
+//   width: 1px
+//   height: 1px
+//   clip: rect(0 0 0 0)
 
-.form-wrapper.is-active .form [type='submit']
-  opacity: 1
-  transform: translateX(0)
-  transition: all .4s ease-in
+// .input-block
+//   margin-bottom: 20px
 
-.btn-login
-  color: #fbfdff
-  background: #3B4465
-  transform: translateX(-30%)
+// .input-block label 
+//   font-size: 14px
+//   font-weight: bold
+//   color: #0b0b0b
 
-.btn-signup
+// .input-block input
+//   display: block
+//   width: 100%
+//   margin-top: 10px //10px
+//   padding-right: 15px
+//   padding-left: 15px
+//   font-size: 16px
+//   line-height: 40px //40PX
+//   color: #0f0f0f
+//   background: #eef9fe98
+//   border: 1px solid #cddbef
+//   border-radius: 2px
+
+// .form [type='submit']
+//   opacity: 0
+//   cursor: pointer
+//   display: block
+//   min-width: 120px
+//   margin: 30px auto 10px
+//   font-size: 18px
+//   line-height: 40px
+//   border-radius: 25px
+//   border: none
+//   transition: all .3s ease-out
+
+// .form-wrapper.is-active .form [type='submit']
+//   opacity: 1
+//   transform: translateX(0)
+//   transition: all .4s ease-in
+
+// .btn-login
+//   color: #fbfdff
+//   background: #3B4465
+//   transform: translateX(-30%)
+
+// .btn-signup
   color: #fbfdff
   background: #3B4465
   box-shadow: inset 0 0 0 2px #3B4465
@@ -379,11 +377,18 @@ body
       flex-direction: column // Alinea los campos 
       align-items: center 
 
+      .seleccion_container
+        margin-bottom: 10rem
+
       .campo1_container,
       .campo2_container
         width: 100% 
         max-width: none 
-        margin-bottom: 20px 
+        margin-bottom: 20px
+        
+  .form.form.form-login
+        max-width: 80% // Ajusta el ancho máximo del formulario según tu preferencia
+        margin-top: 2rem // Ajusta el margen superior según tu preferencia
 
 @media screen and (min-width: 769px)
   .contenido_container
@@ -393,6 +398,10 @@ body
 
       .campo1_container,
       .campo2_container
-        width: calc(50% - 10px) // ocupen la mitad del contenedor, con un margen de 10px entre ellos
+        width: calc(50% - 15px) // ocupen la mitad del contenedor, con un margen de 10px entre ellos
         margin-bottom: 0 // Elimina el margen inferior entre campos 
         margin-right: 10px // Ajusta el margen derecho entre campos 
+
+  .form.form.form-login
+      max-width: 100% // Ajusta el ancho máximo del formulario según tu preferencia
+      margin-top: 2rem // Ajusta el margen superior según tu preferencia
