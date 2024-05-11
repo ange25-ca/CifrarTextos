@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const cifrarCesar = require('../controllers/cifrarCesar');
 const cifrarHexa = require('../controllers/cifrarHexa');
+const cifarBase64 = require('../controllers/cifrarBase64');
 
 // Ruta para mostrar el formulario de registro
 router.get('/', (req, res) => {
@@ -26,9 +27,12 @@ router.post('/cifrar', (req, res) => {
     case 'Hexa':
       textoCifrado = cifrarHexa(textoOriginal);
       break;
+    case 'Base64':
+      textoCifrado = cifarBase64(textoOriginal);
+      break;
     // Agrega casos para otras opciones si las tienes
     default:
-      textoCifrado = 'Opción no válida';
+      textoCifrado = 'Opción no válida para cifrar';
   }
 
   // Renderiza la vista index con el texto cifrado

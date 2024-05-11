@@ -4,6 +4,7 @@ const express = require('express');
 const router = express.Router();
 const cifrarCesar = require('../controllers/cifrarCesar'); 
 const cifrarHexa = require('../controllers/cifrarHexa');
+const cifarBase64 = require('../controllers/cifrarBase64');
 
 // Manejador de ruta para manejar la solicitud POST del formulario
 router.post('/Cifrar', (req, res) => {
@@ -24,18 +25,28 @@ router.post('/Cifrar', (req, res) => {
             textoCifrado = cifrarCesar(textoOriginal, SaltosCesar);
         } else {
             // Implementar otras opciones de cifrado aquí si es necesario
-            throw new Error('Opción de cifrado no válida');
+            throw new Error('Opción de cifrado no válida para cifrar en codigo cesar');
         }
-        // Renderizar una vista con el texto cifrado
-        res.render('index', { textoOriginal: textoOriginal, textoCifradoResultado: textoCifrado }); // Aquí se cambia a textoCifradoResultado
 
         if (opcion === 'Hexa'){
             //Cifrar utilizando el cifrado Hexa
             textoCifrado = cifrarHexa(textoOriginal);
         } else {
-            //Error por el cifrado del cesár
-            throw new Error('Opción de cifrado no válida');
+            //Error por el cifrado del hexadecimal
+            throw new Error('Opción de cifrado no válida para cifrar en hexadecimal');
         }
+
+        if (opcion === 'Base64'){
+            //Cifra usando base64
+            textoCifrado = cifarBase64(textoOriginal);
+        }else {
+            //Error al cifrar en base64
+            throw new Error('Opción de cifrado no válida para cifrar en Base64');
+        }
+
+
+
+
         res.render('index',{ textoOriginal: textoOriginal, textoCifradoResultado : textoCifrado}); 
 
 
