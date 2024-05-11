@@ -9,6 +9,7 @@ body {
   padding: 0;
   background-color: #3B4465;
   color: white;
+  font-family: "Englebert", cursive;
 }
 
 .title {
@@ -163,7 +164,8 @@ body {
 .contenido_container .campos_container .seleccion_container {
   line-height: 15rem;
   height: 20px;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+  margin-top: -5rem;
 }
 .contenido_container .campos_container .seleccion_container .opcionStyle {
   padding: 14px;
@@ -196,13 +198,17 @@ body {
 }
 .contenido_container .campos_container .campo1_container .label {
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 1rem;
+  margin-top: 4rem;
 }
 .contenido_container .campos_container .campo1_container .textarea {
   width: 100%;
   height: 100%;
   background-color: rgba(73, 83, 118, 0.5647058824);
   color: white;
+}
+.contenido_container .campos_container .campo1_container .botones {
+  display: block;
 }
 .contenido_container .campos_container .campo2_container {
   width: 100%;
@@ -213,7 +219,8 @@ body {
 }
 .contenido_container .campos_container .campo2_container .label {
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 1rem;
+  margin-top: 4rem;
 }
 .contenido_container .campos_container .campo2_container .textarea {
   width: 100%;
@@ -245,15 +252,182 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
 .form {
   overflow: hidden;
-  min-width: 260px;
-  margin-top: 50px;
+  text-align: center;
+  padding: 30px 30px;
+  border-radius: 15px;
+}
+
+.section-title {
+  font-size: 32px;
+  letter-spacing: 1px;
+  color: #fff;
+}
+
+fieldset {
+  height: 250px;
+}
+
+.forms {
+  display: flex;
+  align-items: flex-start;
+  text-align: center;
+}
+
+.btn-login {
+  font-size: 0.9rem;
+  border-radius: 5px;
+  margin-top: 1rem;
+  margin-left: 3rem;
+  width: 10rem;
+  height: 3rem;
+  border: none;
+  background-color: rgba(117, 126, 161, 0.5647058824);
+  color: white;
+  font-weight: bold;
+}
+
+.register-link {
+  text-decoration: none;
+  color: rgba(199, 223, 242, 0.7529411765);
+}
+
+.form {
+  overflow: hidden;
   padding: 30px 25px;
   border-radius: 5px;
-  transform-origin: top;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-block {
+  margin-top: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.input-block label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.input-block input {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  padding-right: 15px;
+  padding-left: 15px;
+  font-size: 16px;
+  line-height: 40px;
+  color: #f8f6f6;
+  background: rgba(255, 255, 255, 0.4235294118);
+  border: 1px solid #b9cfee;
+  border-radius: 2px;
+  align-items: center;
+  text-align: center;
+}
+
+.form-wrapper.is-active.form {
+  background-color: rgba(251, 252, 255, 0.6117647059);
+  margin-bottom: 1rem;
+}
+
+.buttonHome {
+  width: 20px;
+  text-align: center;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  margin-right: 3.5rem;
+}
+
+.forms-section-signup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.form-signup {
+  overflow: hidden;
+  text-align: center;
+  padding: 0px 30px;
+  border-radius: 15px;
+}
+
+.section-title-signup {
+  font-size: 32px;
+  letter-spacing: 1px;
+  color: #fff;
+}
+
+.Signup {
+  height: 400px;
+  margin-top: 1rem;
+}
+
+.forms-signup {
+  display: flex;
+  align-items: flex-start;
+  text-align: center;
+}
+
+.form-wrapper.is-active.form-signup {
+  background-color: rgba(251, 252, 255, 0.6117647059);
+  margin-bottom: 1rem;
+}
+
+.input-inicioSesion {
+  margin-top: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.input-inicioSesion label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.input-inicioSesion input {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  padding-right: 15px;
+  padding-left: 15px;
+  font-size: 16px;
+  line-height: 40px;
+  color: #f8f6f6;
+  background: rgba(255, 255, 255, 0.4235294118);
+  border: 1px solid #b9cfee;
+  border-radius: 2px;
+  align-items: center;
+  text-align: center;
+}
+
+.btn-signup {
+  font-size: 0.9rem;
+  border-radius: 5px;
+  margin-top: 1rem;
+  margin-left: 5rem;
+  width: 10rem;
+  height: 3rem;
+  border: none;
+  background-color: rgba(117, 126, 161, 0.5647058824);
+  color: white;
+  font-weight: bold;
+}
+
+.title {
+  font-family: "Major Mono Display", monospace;
+  font-size: 12px;
 }
 
 @media screen and (max-width: 768px) {
@@ -263,7 +437,12 @@ body {
     align-items: center;
   }
   .contenido_container .campos_container .seleccion_container {
-    margin-bottom: 10rem;
+    margin-top: 2.5rem;
+    margin-bottom: 5rem;
+  }
+  .contenido_container .campos_container .botones {
+    margin-top: 6rem;
+    margin-bottom: 1rem;
   }
   .contenido_container .campos_container .campo1_container,
   .contenido_container .campos_container .campo2_container {
@@ -271,9 +450,16 @@ body {
     max-width: none;
     margin-bottom: 20px;
   }
-  .form.form.form-login {
-    max-width: 80%;
-    margin-top: 2rem;
+  .login-container {
+    margin-top: 5rem;
+  }
+  .login-container .form.form.form-login {
+    width: 100%;
+    margin-top: -1rem;
+  }
+  .login-container .form.form.form-signup {
+    width: 100%;
+    margin-top: -1rem;
   }
 }
 @media screen and (min-width: 769px) {
@@ -281,15 +467,32 @@ body {
     flex-direction: row;
     justify-content: space-between;
   }
+  .contenido_container .campos_container .seleccion_container {
+    margin-bottom: 10rem;
+  }
+  .contenido_container .campos_container .seleccion_container .saltoStyle {
+    margin-bottom: 1rem;
+  }
+  .contenido_container .campos_container .botones {
+    margin-top: -3rem;
+    margin-bottom: 5rem;
+  }
   .contenido_container .campos_container .campo1_container,
   .contenido_container .campos_container .campo2_container {
     width: calc(50% - 15px);
-    margin-bottom: 0;
+    margin-bottom: 5rem;
     margin-right: 10px;
   }
-  .form.form.form-login {
-    max-width: 100%;
-    margin-top: 2rem;
+  .login-container {
+    margin-top: 5rem;
+  }
+  .login-container form.form.form-login {
+    max-width: calc(100% - 15px);
+    margin-top: -1rem;
+  }
+  .login-container form.form.form-signup {
+    max-width: calc(100% - 15px);
+    margin-top: -1rem;
   }
 }
 

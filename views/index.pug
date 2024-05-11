@@ -4,6 +4,7 @@ link(href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css", re
 link(rel="preconnect", href="https://fonts.googleapis.com")
 link(rel="preconnect", href="https://fonts.gstatic.com" crossorigin)
 link(href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Major+Mono+Display&display=swap", rel="stylesheet")
+link(href="https://fonts.googleapis.com/css2?family=Englebert&family=Freckle+Face&family=Josefin+Slab:wght@100..700&display=swap" rel="stylesheet")
 meta(name="viewport", content="width=device-width, initial-scale=1.0")
 
 block content
@@ -21,11 +22,11 @@ block content
             h1 #{title}
           div.menu-items
             li
-              a(href="#") Home
+              a(href='/') Home
             li
-              a(href="#") about
+              a(href='/registro') Registrate
             li
-              a(href="#") contact
+              a(href='/login') Inicia sesion
     form(action="/Cifrar" method="post")
       div.contenido_container
         div.campos_container
@@ -40,7 +41,14 @@ block content
           div.campo1_container
             label.label(for="trans-text") Ingresa el texto que deseas codificar
             textarea.textarea(id="textoOriginal" name="textoOriginal", cols="30", rows="10")= textoOriginal
-          button.codiButton(type="submit" id="cifrarBoton" name="cifrarBoton") CODIFICAR 
+          div.botones
+            button.codiButton(type="submit" id="cifrarBoton" name="cifrarBoton") CODIFICAR
+            button.codiButton(type="submit", onclick="refreshPage()") 
+              i(class="ri-refresh-line") 
           div.campo2_container
             label.label(for="trans-text") Tu texto codificado: 
             textarea.textarea(name="textoCifradoResultado", rows="10", cols="30")= textoCifradoResultado
+script.
+  function refreshPage(){
+    window.location.reload();
+  }

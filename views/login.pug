@@ -1,25 +1,32 @@
 link(rel='stylesheet', href='/css/styles.css')
 meta(name="viewport", content="width=device-width, initial-scale=1.0")
+link(rel="preconnect", href="https://fonts.googleapis.com")
+link(rel="preconnect", href="https://fonts.gstatic.com" crossorigin)
+link(href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css", rel="stylesheet")
+link(href="https://fonts.googleapis.com/css2?family=Englebert&family=Freckle+Face&family=Josefin+Slab:wght@100..700&display=swap" rel="stylesheet")
 
 block content
   div.login-container
   section.forms-section
     .forms
       .form-wrapper.is-active
-        button.switcher.switcher-login(type="button")
-          | Login
-          span.underline
+        button.buttonHome(type="button")
+          a.buttonHome(href='/') Home
+            i(class="ri-home-3-line")
         //LOGIN
         form.form.form-login(action='/login' method='POST') 
           fieldset
             .input-block
-              label(for="username") Usuario
+              i(class="ri-user-line")
+              label(for="username")  Usuario
               input(type="text", name="username", id='username' required)
             .input-block
-              label(for="password") Password
+              i(class="ri-lock-password-line")
+              label(for="password")  Password
               input#login-password(type="password", name="password", required)
           button.btn-login(type="submit") Inicar sesión
-
+          p ¿No tienes una cuenta? 
+            a(href='/registro' class='register-link') Regístrate
 
 
 

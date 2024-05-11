@@ -8,6 +8,7 @@ body
   padding: 0
   background-color: #3B4465
   color: white
+  font-family: "Englebert", cursive 
 
 .title
   font-size: 2rem
@@ -156,7 +157,8 @@ body
     .seleccion_container
       line-height: 15rem
       height: 20px
-      margin-bottom: 2rem
+      margin-bottom: 1rem
+      margin-top: -5rem
 
       .opcionStyle
         padding: 14px
@@ -189,13 +191,17 @@ body
       
       .label
         display: block 
-        margin-bottom: 5px 
+        margin-bottom: 1rem 
+        margin-top: 4rem
       
       .textarea
         width: 100%
         height: 100%
         background-color: #49537690
         color: white
+
+      .botones
+        display: block
 
     .campo2_container
       width: 100% 
@@ -206,13 +212,15 @@ body
       
       .label
         display: block 
-        margin-bottom: 5px 
+        margin-bottom: 1rem
+        margin-top: 4rem 
       
       .textarea
         width: 100%
         height: 100%
         background-color: #49537690
         color: white
+
 
     .codiButton
       font-size: 15px
@@ -234,141 +242,164 @@ body
 
 //DISEÑO DEL LOGIN
 .forms-section
-   display: flex
-   flex-direction: column
-   justify-content: center
-   align-items: center
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  text-align: center
 
 .form
   overflow: hidden
-  min-width: 260px
-  margin-top: 50px
+  text-align: center
+  padding: 30px 30px
+  border-radius: 15px
+
+.section-title
+  font-size: 32px
+  letter-spacing: 1px
+  color: #fff
+
+fieldset
+  height: 250px
+
+.forms
+  display: flex
+  align-items: flex-start
+  text-align: center
+
+.btn-login 
+  font-size: 0.9rem
+  border-radius: 5px
+  margin-top: 1rem
+  margin-left: 3rem
+  width: 10rem
+  height: 3rem
+  border: none
+  background-color: #757ea190
+  color: white
+  font-weight: bold
+
+.register-link
+  text-decoration: none
+  color: #c7dff2c0
+
+.form
+  overflow: hidden
   padding: 30px 25px
   border-radius: 5px
-  transform-origin: top
+  display: flex
+  flex-direction: column
 
+.input-block
+   margin-top: 1.5rem
+   margin-bottom: 10px
 
-// .section-title
-//   font-size: 32px
-//   letter-spacing: 1px
-//   color: #fff
+.input-block label 
+   font-size: 14px
+   font-weight: bold
+   color: #ffffff
 
-// .forms
-//   display: flex
-//   align-items: flex-start
-//   margin-top: 40px
+.input-block input
+  display: block
+  width: 100%
+  margin-top: 10px //10px
+  padding-right: 15px
+  padding-left: 15px
+  font-size: 16px
+  line-height: 40px //40PX
+  color: #f8f6f6
+  background: #ffffff6c
+  border: 1px solid #b9cfee
+  border-radius: 2px
+  align-items: center
+  text-align: center
 
-// @keyframes showLayer
-//   100%
-//     z-index: 1
+.form-wrapper.is-active.form
+  background-color: #fbfcff9c
+  margin-bottom: 1rem
 
-// @keyframes hideLayer
-//   49.999%
-//     z-index: 1
+.buttonHome
+  width: 20px
+  text-align: center
+  background: none
+  border: none
+  color: white
+  font-size: 1rem
+  text-decoration: none
+  letter-spacing: 0.1em
+  margin-right: 3.5rem
 
-// .form-wrapper.is-active .switcher-login
-//   color: #ffffff8a
+//DISEÑO DEL REGISTRO
+.forms-section-signup
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  text-align: center
 
-// .form-wrapper.is-active .switcher-signup
-//   color: #fff
+.form-signup
+  overflow: hidden
+  text-align: center
+  padding: 0px 30px
+  border-radius: 15px
 
-// .form
-//   overflow: hidden
-//   min-width: 260px
-//   margin-top: 50px
-//   padding: 30px 25px
-//   border-radius: 5px
-//   transform-origin: top
+.section-title-signup
+  font-size: 32px
+  letter-spacing: 1px
+  color: #fff
 
-// @keyframes showLogin
-//   100%
-//     background-color: #ffffff
-//     transform: translate(35%, -20px)
+.Signup
+  height: 400px
+  margin-top: 1rem
 
-// @keyframes hideLogin
-//   100%
-//     background: #d7e7f1
-//     transform: translate(40%, 10px)
+.forms-signup
+  display: flex
+  align-items: flex-start
+  text-align: center
 
-// .form-signup
-//   animation: hideSignup .3s ease-out forwards
+.form-wrapper.is-active.form-signup
+  background-color: #fbfcff9c
+  margin-bottom: 1rem
 
-// .form-wrapper.is-active .form-signup
-//   animation: showSignup .3s ease-in forwards
+.input-inicioSesion
+   margin-top: 1.5rem
+   margin-bottom: 10px
+   
+.input-inicioSesion label 
+   font-size: 14px
+   font-weight: bold
+   color: #ffffff
 
-// @keyframes showSignup
-//   100%
-//     background-color: #fff
-//     transform: translate(-35%, -20px) scaleY(1)
+.input-inicioSesion input
+  display: block
+  width: 100%
+  margin-top: 10px //10px
+  padding-right: 15px
+  padding-left: 15px
+  font-size: 16px
+  line-height: 40px //40PX
+  color: #f8f6f6
+  background: #ffffff6c
+  border: 1px solid #b9cfee
+  border-radius: 2px
+  align-items: center
+  text-align: center
 
-// @keyframes hideSignup
-//   100%
-//     background: #d7e7f1
-//     transform: translate(-40%, 10px) scaleY(.8)
-
-
-// .form-wrapper.is-active fieldset
-//   opacity: 1
-//   transform: translateX(0)
-//   transition: opacity .4s ease-in, transform .35s ease-in
-
-// .form legend
-//   position: absolute
-//   top: 0 
-//   left: 0
-//   overflow: hidden
-//   width: 1px
-//   height: 1px
-//   clip: rect(0 0 0 0)
-
-// .input-block
-//   margin-bottom: 20px
-
-// .input-block label 
-//   font-size: 14px
-//   font-weight: bold
-//   color: #0b0b0b
-
-// .input-block input
-//   display: block
-//   width: 100%
-//   margin-top: 10px //10px
-//   padding-right: 15px
-//   padding-left: 15px
-//   font-size: 16px
-//   line-height: 40px //40PX
-//   color: #0f0f0f
-//   background: #eef9fe98
-//   border: 1px solid #cddbef
-//   border-radius: 2px
-
-// .form [type='submit']
-//   opacity: 0
-//   cursor: pointer
-//   display: block
-//   min-width: 120px
-//   margin: 30px auto 10px
-//   font-size: 18px
-//   line-height: 40px
-//   border-radius: 25px
-//   border: none
-//   transition: all .3s ease-out
-
-// .form-wrapper.is-active .form [type='submit']
-//   opacity: 1
-//   transform: translateX(0)
-//   transition: all .4s ease-in
-
-// .btn-login
-//   color: #fbfdff
-//   background: #3B4465
-//   transform: translateX(-30%)
-
-// .btn-signup
-  color: #fbfdff
-  background: #3B4465
-  box-shadow: inset 0 0 0 2px #3B4465
-  transform: translateX(30%)
+.btn-signup
+  font-size: 0.9rem
+  border-radius: 5px
+  margin-top: 1rem
+  margin-left: 5rem
+  width: 10rem
+  height: 3rem
+  border: none
+  background-color: #757ea190
+  color: white
+  font-weight: bold
+  
+.title 
+  font-family: "Major Mono Display", monospace
+  font-size: 12px
 
 @media screen and (max-width: 768px)
   .contenido_container
@@ -378,17 +409,29 @@ body
       align-items: center 
 
       .seleccion_container
-        margin-bottom: 10rem
+        margin-top: 2.5rem
+        margin-bottom: 5rem
+      
+      .botones
+        margin-top: 6rem
+        margin-bottom: 1rem
 
       .campo1_container,
       .campo2_container
         width: 100% 
         max-width: none 
         margin-bottom: 20px
-        
-  .form.form.form-login
-        max-width: 80% // Ajusta el ancho máximo del formulario según tu preferencia
-        margin-top: 2rem // Ajusta el margen superior según tu preferencia
+
+  .login-container 
+    margin-top: 5rem
+
+    .form.form.form-login
+      width: 100% // Ajusta el ancho máximo del formulario según tu preferencia
+      margin-top: -1rem // Ajusta el margen superior según tu preferencia
+    
+    .form.form.form-signup
+      width: 100% // Ajusta el ancho máximo del formulario según tu preferencia
+      margin-top: -1rem // Ajusta el margen superior según tu preferencia
 
 @media screen and (min-width: 769px)
   .contenido_container
@@ -396,12 +439,29 @@ body
       flex-direction: row // Alinea los campos en una fila en pantallas más grandes
       justify-content: space-between // Espacia los campos horizontalmente en pantallas más grandes
 
+      .seleccion_container
+        margin-bottom: 10rem
+
+        .saltoStyle
+          margin-bottom: 1rem
+
+      .botones
+        margin-top: -3rem
+        margin-bottom: 5rem
+
       .campo1_container,
       .campo2_container
         width: calc(50% - 15px) // ocupen la mitad del contenedor, con un margen de 10px entre ellos
-        margin-bottom: 0 // Elimina el margen inferior entre campos 
+        margin-bottom: 5rem // Elimina el margen inferior entre campos 
         margin-right: 10px // Ajusta el margen derecho entre campos 
+  
+  .login-container 
+    margin-top: 5rem
 
-  .form.form.form-login
-      max-width: 100% // Ajusta el ancho máximo del formulario según tu preferencia
-      margin-top: 2rem // Ajusta el margen superior según tu preferencia
+    form.form.form-login
+      max-width: calc(100% - 15px)// Ajusta el ancho máximo del formulario según tu preferencia
+      margin-top: -1rem // Ajusta el margen superior según tu preferencia
+
+    form.form.form-signup
+      max-width: calc(100% - 15px)// Ajusta el ancho máximo del formulario según tu preferencia
+      margin-top: -1rem // Ajusta el margen superior según tu preferencia
