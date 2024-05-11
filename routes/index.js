@@ -3,6 +3,7 @@ const router = express.Router();
 const cifrarCesar = require('../controllers/cifrarCesar');
 const cifrarHexa = require('../controllers/cifrarHexa');
 const cifarBase64 = require('../controllers/cifrarBase64');
+const cifrarBinario = require('../controllers/cifrarBinario');
 
 // Ruta para mostrar el formulario de registro
 router.get('/', (req, res) => {
@@ -29,6 +30,9 @@ router.post('/cifrar', (req, res) => {
       break;
     case 'Base64':
       textoCifrado = cifarBase64(textoOriginal);
+      break;
+    case 'Binario':
+      textoCifrado = cifrarBinario(textoOriginal);
       break;
     // Agrega casos para otras opciones si las tienes
     default:

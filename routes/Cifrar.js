@@ -5,6 +5,7 @@ const router = express.Router();
 const cifrarCesar = require('../controllers/cifrarCesar'); 
 const cifrarHexa = require('../controllers/cifrarHexa');
 const cifarBase64 = require('../controllers/cifrarBase64');
+const cifrarBinario = require('../controllers/cifrarBinario');
 
 // Manejador de ruta para manejar la solicitud POST del formulario
 router.post('/Cifrar', (req, res) => {
@@ -44,12 +45,15 @@ router.post('/Cifrar', (req, res) => {
             throw new Error('Opción de cifrado no válida para cifrar en Base64');
         }
 
-
-
+        if(opcion === 'cifrarBinario'){
+            //Cifra el texto por medio de cifrarBinario (es una función)
+            textoCifrado = cifrarBinario(textoOriginal);
+        }else {
+            //Error al cifrar en Binario
+            throw new Error('Opción decifrado no válida para cifrar en binario');
+        } 
 
         res.render('index',{ textoOriginal: textoOriginal, textoCifradoResultado : textoCifrado}); 
-
-
     } catch (error) {
         // Manejar errores
         console.error(error);
