@@ -4,6 +4,8 @@ const cifrarCesar = require('../controllers/cifrarCesar');
 const cifrarHexa = require('../controllers/cifrarHexa');
 const cifarBase64 = require('../controllers/cifrarBase64');
 const cifrarBinario = require('../controllers/cifrarBinario');
+const intentoCifrado = require('../middlewares/counterMiddleware');
+const verificarAutenticacion = require('../middlewares/verifyMiddleware');
 
 // Ruta para mostrar el formulario de registro
 router.get('/', (req, res) => {
@@ -13,7 +15,7 @@ router.get('/', (req, res) => {
 
 
 // Ruta para manejar la solicitud POST desde el formulario
-router.post('/cifrar', (req, res) => {
+router.post('/cifrar',verificarAutenticacion, intentoCifrado, (req, res) => {
   // Obtener el texto ingresado desde el formulario
   const textoOriginal = req.body.textoOriginal;
   const opcion = req.body.opcion;
@@ -42,29 +44,5 @@ router.post('/cifrar', (req, res) => {
   // Renderiza la vista index con el texto cifrado
   res.render('index', { title: 'CODETEXT', textoOriginal: textoOriginal, textoCifradoResultado: textoCifrado });
 });
-
-
-// Ruta para manejar la solicitud POST desde el formulario
-// router.post('/cifrar', (req, res) => {
-//   // Obtener el texto ingresado desde el formulario
-//   const textoOriginal = req.body.textoOriginal;
-//   const SaltosCesar = req.body.saltosCesar;
-
-//   //const textoOriginalHexa = req.body.textoOriginal;
-  
-//   // Realizar el cifrado utilizando la función cifrarCesar
-//   const textoCifrado = cifrarCesar(textoOriginal, SaltosCesar);
-//   const textoCifradoHexa = cifrarHexa(textoOriginal);
-
-
-//   // Concatenar los textos cifrados
-//   const textoCifradoConcatenado = textoCifrado + '\n' + textoCifradoHexa;
-
-//   // Renderiza la vista index con el texto cifrado
-//   res.render('index', { title: 'CODETEXT', textoCifradoResultado: textoCifradoConcatenado });
-//   // Renderiza la vista index con el texto cifrado
-//   //res.render('index', { title: 'CODETEXT', textoCifradoResultado: textoCifrado, textoCifradoHexa: textoCifradoHexa});
-// });
-
 
 module.exports = router; 

@@ -19,8 +19,6 @@ app.use(cookieParser());
 //Configura DotEnv
 dotenv.config();
 
-
-
 // Configurar middleware para manejar sesiones
 app.use(session({
   secret: process.env.ACCESS_TOKEN_SECRET, // Clave secreta para firmar la cookie de sesión

@@ -27,6 +27,10 @@ block content
               a(href='/registro') Registrate
             li
               a(href='/login') Inicia sesion
+            if user != ''
+              li
+                a(href='/logout')
+                  i(class='material-symbols-rounded') logout
     form(action="/Cifrar" method="post")
       div.contenido_container
         div.campos_container

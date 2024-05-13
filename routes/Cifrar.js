@@ -8,7 +8,7 @@ const cifarBase64 = require('../controllers/cifrarBase64');
 const cifrarBinario = require('../controllers/cifrarBinario');
 
 // Manejador de ruta para manejar la solicitud POST del formulario
-router.post('/Cifrar', (req, res) => {
+router.post('/Cifrar',(req, res) => {
     try {
         // Validar la entrada
         const opcion = req.body.opcion;
