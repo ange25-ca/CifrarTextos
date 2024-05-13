@@ -3,57 +3,49 @@
 const express = require('express');
 const router = express.Router();
 const cifrarCesar = require('../controllers/cifrarCesar'); 
+const regisMovimiento = require('../database/tables/historial');
 const cifrarHexa = require('../controllers/cifrarHexa');
 const cifarBase64 = require('../controllers/cifrarBase64');
 const cifrarBinario = require('../controllers/cifrarBinario');
 
 // Manejador de ruta para manejar la solicitud POST del formulario
-router.post('/Cifrar',(req, res) => {
+router.post('/Cifrar', async (req, res) => {
     try {
         // Validar la entrada
         const opcion = req.body.opcion;
         const SaltosCesar = parseInt(req.body.saltosCesar);
         const textoOriginal = req.body.textoOriginal;
 
-        if (!opcion || isNaN(saltosCesar) || !textoOriginal) {
+        if (!opcion || !textoOriginal) {
             throw new Error('Datos de entrada inválidos');
         }
 
         let textoCifrado;
 
-        if (opcion === 'Cesar') {
-            // Cifrar utilizando el cifrado César
-            textoCifrado = cifrarCesar(textoOriginal, SaltosCesar);
-        } else {
-            // Implementar otras opciones de cifrado aquí si es necesario
-            throw new Error('Opción de cifrado no válida para cifrar en codigo cesar');
+        // Realizar cifrado según la opción seleccionada
+        switch(opcion) {
+            case 'Cesar':
+                textoCifrado = cifrarCesar(textoOriginal, SaltosCesar);
+                break;
+            case 'Hexa':
+                textoCifrado = cifrarHexa(textoOriginal);
+                break;
+            case 'Base64':
+                textoCifrado = cifarBase64(textoOriginal);
+                break;
+            case 'cifrarBinario':
+                textoCifrado = cifrarBinario(textoOriginal);
+                break;
+            default:
+                throw new Error('Opción de cifrado no válida');
         }
 
-        if (opcion === 'Hexa'){
-            //Cifrar utilizando el cifrado Hexa
-            textoCifrado = cifrarHexa(textoOriginal);
-        } else {
-            //Error por el cifrado del hexadecimal
-            throw new Error('Opción de cifrado no válida para cifrar en hexadecimal');
-        }
+        // Llamar a la función para registrar el movimiento
+        const usuario_id = req.user ? req.user.id : null; // Obtener el ID del usuario si está autenticado
+        await regisMovimiento(usuario_id, textoOriginal, opcion, textoCifrado);
 
-        if (opcion === 'Base64'){
-            //Cifra usando base64
-            textoCifrado = cifarBase64(textoOriginal);
-        }else {
-            //Error al cifrar en base64
-            throw new Error('Opción de cifrado no válida para cifrar en Base64');
-        }
-
-        if(opcion === 'cifrarBinario'){
-            //Cifra el texto por medio de cifrarBinario (es una función)
-            textoCifrado = cifrarBinario(textoOriginal);
-        }else {
-            //Error al cifrar en Binario
-            throw new Error('Opción decifrado no válida para cifrar en binario');
-        } 
-
-        res.render('index',{ textoOriginal: textoOriginal, textoCifradoResultado : textoCifrado}); 
+        // Renderizar la vista con los resultados del cifrado
+        res.render('index', { textoOriginal: textoOriginal, textoCifradoResultado: textoCifrado });
     } catch (error) {
         // Manejar errores
         console.error(error);

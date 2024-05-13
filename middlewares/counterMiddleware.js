@@ -4,7 +4,7 @@ const app = express();
 // Obtiene la ip
 let intentosCifrado = {};
 
-// Middleware 
+// Middleware para el logueo del usuario
 function intentoCifrado(req, res, next) {
 // Verifica si el usuario está autenticado
   if (req.isAuthenticated()) {
@@ -15,7 +15,7 @@ function intentoCifrado(req, res, next) {
 
   // Verifica si existe un contador de intentos para esta dirección IP
   if (intentosCifrado[ip] === undefined) {
-    intentosCifrado[ip] = 1; //inica el contador de la ip en 1
+    intentosCifrado[ip] = 0; //inica el contador de la ip en 1
   } else {
     // Si existe, incrementa el contador en 1
     intentosCifrado[ip]++;

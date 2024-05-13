@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const cifrarCesar = require('../controllers/cifrarCesar');
+const regisMovimiento = require('../database/tables/historial'); // Importa la función para registrar movimientos
+const cifrarCesar = require('../controllers/cifrarCesar'); 
 const cifrarHexa = require('../controllers/cifrarHexa');
 const cifarBase64 = require('../controllers/cifrarBase64');
 const cifrarBinario = require('../controllers/cifrarBinario');
-const intentoCifrado = require('../middlewares/counterMiddleware');
-const verificarAutenticacion = require('../middlewares/verifyMiddleware');
+const verificarAutenticacion = require('../middlewares/verifyMiddleware'); // Importa el middleware de verificación de autenticación
 
 // Ruta para mostrar el formulario de registro
 router.get('/', (req, res) => {
@@ -13,9 +13,8 @@ router.get('/', (req, res) => {
   res.render('index', { title: 'CODETEXT' });
 });
 
-
 // Ruta para manejar la solicitud POST desde el formulario
-router.post('/cifrar',verificarAutenticacion, intentoCifrado, (req, res) => {
+router.post('/cifrar', verificarAutenticacion, async (req, res) => {
   // Obtener el texto ingresado desde el formulario
   const textoOriginal = req.body.textoOriginal;
   const opcion = req.body.opcion;
@@ -41,8 +40,17 @@ router.post('/cifrar',verificarAutenticacion, intentoCifrado, (req, res) => {
       textoCifrado = 'Opción no válida para cifrar';
   }
 
+  // Llama a la función para registrar el movimiento
+  try {
+    const usuario_id = req.user ? req.user.id : null; // Obtener el ID del usuario si está autenticado
+    await regisMovimiento(usuario_id, textoOriginal, opcion, textoCifrado);
+    console.log('Movimiento registrado correctamente');
+  } catch (error) {
+    console.error('Error al registrar movimiento', error);
+  }
+
   // Renderiza la vista index con el texto cifrado
   res.render('index', { title: 'CODETEXT', textoOriginal: textoOriginal, textoCifradoResultado: textoCifrado });
 });
 
-module.exports = router; 
+module.exports = router;
