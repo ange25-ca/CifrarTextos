@@ -51,8 +51,10 @@ block content
               i(class="ri-refresh-line") 
           div.campo2_container
             label.label(for="trans-text") Tu texto codificado: 
-            textarea.textarea(name="textoCifradoResultado", rows="10", cols="30")= textoCifradoResultado
+            textarea.textarea(name="textoCifradoResultado",id="textoCifradoResultado", rows="10", cols="30")= textoCifradoResultado
 script.
   function refreshPage(){
+    document.getElementById('textoOriginal').value = ''; // Limpiar el contenido del textarea
+    document.getElementById('textoCifradoResultado').value = ''; // Limpiar el contenido del textarea
     window.location.reload();
   }
