@@ -6,6 +6,7 @@ const cifrarHexa = require('../controllers/cifrarHexa');
 const cifarBase64 = require('../controllers/cifrarBase64');
 const cifrarBinario = require('../controllers/cifrarBinario');
 const verificarAutenticacion = require('../middlewares/verifyMiddleware'); // Importa el middleware de verificación de autenticación
+const intentoCifrado = require('../middlewares/counterMiddleware');
 
 // Ruta para mostrar el formulario de registro
 router.get('/', (req, res) => {
@@ -14,7 +15,7 @@ router.get('/', (req, res) => {
 });
 
 // Ruta para manejar la solicitud POST desde el formulario
-router.post('/cifrar', verificarAutenticacion, async (req, res) => {
+router.post('/Cifrar', verificarAutenticacion,intentoCifrado, async (req, res) => {
   // Obtener el texto ingresado desde el formulario
   const textoOriginal = req.body.textoOriginal;
   const opcion = req.body.opcion;
@@ -51,6 +52,9 @@ router.post('/cifrar', verificarAutenticacion, async (req, res) => {
 
   // Renderiza la vista index con el texto cifrado
   res.render('index', { title: 'CODETEXT', textoOriginal: textoOriginal, textoCifradoResultado: textoCifrado });
+
+
+
 });
 
 module.exports = router;

@@ -6,11 +6,10 @@ const flash = require('connect-flash');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const SQLiteStore = require('connect-sqlite3')(session);
-const usuarios = require('./database/tables/usuarios'); // Archivo contenedor de querys para MySQL
+const usuarios = require('./controllers/userControllers'); // Archivo contenedor de querys para MySQL
 const dotenv = require('dotenv');
 const cookieParser = require('cookie-parser');
 const authMiddleWare = require('./middlewares/authMiddleware');
-const codiControllers = require('./controllers/codiControllers');
 const cifrarCesar = require('./controllers/cifrarCesar');
 
 //Configura Cookie Parser

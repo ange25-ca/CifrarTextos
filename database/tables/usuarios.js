@@ -10,7 +10,7 @@ async function registrar(nombre, email, password) {
         console.error('Error al insertar usuario:', error);
         throw error;
     } finally {
-        conexion.release(); // Liberar la conexión al finalizar
+        conexion.release(); // Cerrar la conexión al finalizar
     }
 }
 
@@ -24,7 +24,7 @@ async function obtenerPorNombre(nombre) {
         console.error('Error al obtener usuario por nombre:', error);
         throw error;
     } finally {
-        conexion.release(); // Liberar la conexión al finalizar
+        conexion.release(); // Cerrar la conexión al finalizar
     }
 }
 
@@ -38,7 +38,7 @@ async function obtenerPorId(id) {
         console.error('Error al obtener usuario por ID:', error);
         throw error;
     } finally {
-        conexion.release(); // Liberar la conexión al finalizar
+        conexion.release(); // Cerrar la conexión al finalizar
     }
 }
 

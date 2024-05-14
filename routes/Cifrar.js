@@ -45,7 +45,7 @@ router.post('/Cifrar', async (req, res) => {
         await regisMovimiento(usuario_id, textoOriginal, opcion, textoCifrado);
 
         // Renderizar la vista con los resultados del cifrado
-        res.render('index', { textoOriginal: textoOriginal, textoCifradoResultado: textoCifrado });
+        //res.render('index', { textoOriginal: textoOriginal, textoCifradoResultado: textoCifrado });
     } catch (error) {
         // Manejar errores
         console.error(error);

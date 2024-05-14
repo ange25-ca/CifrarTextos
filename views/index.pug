@@ -47,14 +47,12 @@ block content
             textarea.textarea(id="textoOriginal" name="textoOriginal", cols="30", rows="10")= textoOriginal
           div.botones
             button.codiButton(type="submit" id="cifrarBoton" name="cifrarBoton") CODIFICAR
-            button.codiButton(type="submit", onclick="refreshPage()") 
+            button.codiButton(type="submit", onclick="limpiarTextarea()") 
               i(class="ri-refresh-line") 
           div.campo2_container
             label.label(for="trans-text") Tu texto codificado: 
             textarea.textarea(name="textoCifradoResultado",id="textoCifradoResultado", rows="10", cols="30")= textoCifradoResultado
-script.
-  function refreshPage(){
-    document.getElementById('textoOriginal').value = ''; // Limpiar el contenido del textarea
-    document.getElementById('textoCifradoResultado').value = ''; // Limpiar el contenido del textarea
-    window.location.reload();
-  }
+  script.
+    function limpiarTextarea() {
+      document.getElementById('textoOriginal').value = '';
+    }
